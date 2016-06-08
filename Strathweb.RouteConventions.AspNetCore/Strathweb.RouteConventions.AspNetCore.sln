@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{262ED40E-19CB-40FC-8E2A-6FA618B45EAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1569111-D7B1-471A-BBE9-84F725CF6214}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Strathweb.RouteConventions.AspNetCore", "src\Strathweb.RouteConventions.AspNetCore\Strathweb.RouteConventions.AspNetCore.xproj", "{BEBE001F-D76B-4AD2-942A-1DC9A1783EB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEBE001F-D76B-4AD2-942A-1DC9A1783EB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEBE001F-D76B-4AD2-942A-1DC9A1783EB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEBE001F-D76B-4AD2-942A-1DC9A1783EB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEBE001F-D76B-4AD2-942A-1DC9A1783EB9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BEBE001F-D76B-4AD2-942A-1DC9A1783EB9} = {262ED40E-19CB-40FC-8E2A-6FA618B45EAD}
+	EndGlobalSection
+EndGlobal
