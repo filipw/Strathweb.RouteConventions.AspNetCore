@@ -10,25 +10,33 @@ namespace Strathweb.RouteConventions.AspNetCore
 {
     public class RouteConvention : IApplicationModelConvention
     {
-        private readonly IRouteTemplateProvider _routeTemplateProvider;
+        private readonly AttributeRouteModel _centralPrefix;
 
         public RouteConvention(IRouteTemplateProvider routeTemplateProvider)
         {
-            _routeTemplateProvider = routeTemplateProvider;
+            _centralPrefix = new AttributeRouteModel(routeTemplateProvider);
         }
 
         public void Apply(ApplicationModel application)
         {
-            var centralPrefix = new AttributeRouteModel(_routeTemplateProvider);
             foreach (var controller in application.Controllers)
             {
-                var attributeRouteSelectors = controller.Selectors.Where(x => x.AttributeRouteModel != null).ToList();
-                if (attributeRouteSelectors.Any())
+                var matchedSelectors = controller.Selectors.Where(x => x.AttributeRouteModel != null).ToList();
+                if (matchedSelectors.Any())
                 {
-                    foreach (var selectorModel in attributeRouteSelectors)
+                    foreach (var selectorModel in matchedSelectors)
                     {
-                        selectorModel.AttributeRouteModel = AttributeRouteModel.CombineAttributeRouteModel(centralPrefix,
+                        selectorModel.AttributeRouteModel = AttributeRouteModel.CombineAttributeRouteModel(_centralPrefix,
                             selectorModel.AttributeRouteModel);
+                    }
+                }
+
+                var unmatchedSelectors = controller.Selectors.Where(x => x.AttributeRouteModel == null).ToList();
+                if (unmatchedSelectors.Any())
+                {
+                    foreach (var selectorModel in unmatchedSelectors)
+                    {
+                        selectorModel.AttributeRouteModel = _centralPrefix;
                     }
                 }
             }
