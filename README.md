@@ -16,3 +16,5 @@ ASP.NET Core MVC application model convention allowing you to specify a global r
 ## Further reading
 
 More info and background - [in a blog post](http://www.strathweb.com/2016/06/global-route-prefix-with-asp-net-core-mvc-revisited/)
+
+### 📢 This feature has been added to [WebApiContrib.Core](https://github.com/WebApiContrib/WebAPIContrib.Core)
